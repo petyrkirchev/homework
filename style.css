@@ -1,0 +1,95 @@
+
+
+/*TASK 8*/
+/*Mnogo grozna kartinka ste slojili za zadachata, zatova izbrah nova.*/
+body.task8 {
+  height: 450vh;
+  margin: 0;
+  background-color: black; 
+  
+}
+
+.container {
+  width: 100%;
+  height:100%;
+}
+
+.pieContainer {
+  height: 450px;
+  width: 450px;
+  margin: 180px auto;
+}
+
+.pieContainer {
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ball {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 250px;
+  z-index: 999999;
+  box-sizing: border-box;
+}
+
+.ball:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-image: url("ball.png");
+  border: 2px goldenrod solid;
+  border-radius: 50%;
+  z-index: 999999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: spinball 5s linear forwards;
+}
+.ball::after{
+  width: 10px;
+  height: 10px;
+    z-index: 999999;
+  position: absolute;
+  top: 120px;
+  left: 120px;
+  animation: spinball 5s linear forwards;
+}
+@keyframes spinball {
+  0% {
+    top: 80px;
+    left: 80px;
+  }
+  100% {
+    top: 82px;
+    left: 152px;
+  }
+}
+
+.pieContainer > .ball {
+  animation: spinback 10s;
+}
+
+@keyframes spinback {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-1080deg);
+  }
+}
+
+
+
+
+
+
