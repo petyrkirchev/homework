@@ -1,3 +1,14 @@
+// ...............TASK 1......................
+// function noIdeaForName() {
+//     var arrayArguments = Array.prototype.slice.call(arguments);
+//     var parent = document.createElement(arrayArguments[0])
+//     document.body.appendChild(parent);
+//     for (var index = 1; index < arrayArguments.length; index++) {
+//         parent.appendChild(document.createElement(arrayArguments[index]));
+//     }
+// }
+
+
 // ................TASK 2.................
 // function createInputs(howMany) {
 //     for (var index = 0; index < howMany; index++) {
