@@ -1,0 +1,140 @@
+// ................TASK 2.................
+// function createInputs(howMany) {
+//     for (var index = 0; index < howMany; index++) {
+//         var input = document.createElement("input");
+//         document.body.appendChild(input);
+//         console.log(document.body.querySelectorAll("input"));
+//     }
+// }
+
+// function inputRender() {
+//     var elements = document.body.querySelectorAll("input");
+//     for (var index = 0; index < elements.length; index++) {
+//         var element = elements[index].value;
+//         var p = document.createElement("p");
+//         var text = document.createTextNode(element);
+//         p.appendChild(text);
+//         document.body.appendChild(p);
+//     }
+// }
+
+
+
+// ..............TASK 3................
+
+// var arr = ["div", "a", "p", "aside", ["p", "p", ["p", "p", ["main", "a", "section"], "p"], "p"], "section", "p", "main", "a", "section", ["p", "p", "p"]];
+
+// function elementInDiv(array, parent) {
+//     if (Array.isArray(array) && array.length < 1) {
+//         return;
+//     }
+//     if (Array.isArray(array[0]) && array[0].length > 1) {
+//         elementInDiv(array[0], parent);
+//     }
+//     if (!Array.isArray(array[0])) {
+//         var element = array[0];
+//         var type = document.createElement(element);
+//         parent.appendChild(type);
+//     }
+//     if (Array.isArray(array[1]) && array[1].length > 1) {
+//         elementInDiv(array[1], type);
+//     }
+//     array.shift(array[0])
+//     return elementInDiv(array, parent);
+// }
+
+// elementInDiv(arr, document.body);
+
+
+// ..................................
+
+
+// function elementInDiv(array){
+//     if(Array.isArray(array)&& array.length<1){
+//         return console.log("bottom");
+//     }
+//     if(Array.isArray(array[0])&&array[0].length>1){
+//         elementInDiv(array[0]);
+//     }
+//     console.log(array);
+//     array.shift(array[0]);
+//     return elementInDiv(array);
+// }
+
+// ..............TASK 4................
+
+// function PersonAdder(name, age, parent,photo) {
+//     this.name = name;
+//     this.age = age;
+//     this.createDiv = function () {
+//         var div = document.createElement("DIV");
+//         parent.appendChild(div);
+//         var image = document.createElement("img");
+//         image.src=photo;
+//         image.style.width="200px"
+//         image.style.height="240px"
+//         image.style.border="1px solid tomato";
+//         div.appendChild(image);
+//         var p1 = document.createElement("p");
+//         var name = document.createTextNode(this.name);
+//         p1.appendChild(name);
+//         div.appendChild(p1);
+//         var p2 = document.createElement("p");
+//         var age = document.createTextNode(this.age);
+//         p2.appendChild(age);
+//         div.appendChild(p2);
+//     }
+// }
+
+// ..............TASK 5................
+
+// var cart = {
+//     items: [],
+
+//     addToCart: function (product) {
+//         cart.items.push(product);
+//         console.log(product)
+//         var paragraph = document.createElement("P");
+//         var text = document.createTextNode("Remove " + product.name);
+//         document.getElementById("cart").appendChild(paragraph);
+//         paragraph.appendChild(text);
+//         paragraph.id =""+product.name;
+//         paragraph.setAttribute("onclick", "cart.removeItem(" + product.name + ")");
+//     },
+
+//     removeItem: function (product) {
+//         var indexOfElement = cart.items.indexOf(product.name);
+//         cart.items.splice(indexOfElement, 1);
+//         var cartItem = document.getElementById(product.name);
+//         cartItem.parentNode.removeChild(cartItem);
+//     },
+// }
+
+// function Product(name, price, weight) {
+//     this.weight = weight;
+//     this.price = price;
+//     this.name = name;
+
+//     var paragraph = document.createElement("P");
+//     var text = document.createTextNode(this.name + " тегло : " + this.weight + " цена : " + this.price);
+//     document.getElementById("products").appendChild(paragraph);
+//     paragraph.appendChild(text);
+//     paragraph.setAttribute("onclick", "cart.addToCart(" + this.name + ")");
+// }
+
+// PikantenProduct.prototype = Object.create(Product.prototype);
+// PikantenProduct.prototype.constructor = PikantenProduct;
+
+// function PikantenProduct(name, price, weight) {
+//     Product.call(this, name, price, weight);
+// }
+
+
+// VegiProduct.prototype = Object.create(Product.prototype);
+// VegiProduct.prototype.constructor = VegiProduct;
+
+// function VegiProduct(name, price, weight) {
+//     Product.call(this, name, price, weight);
+// }
+
+// var shopska = new Product("shopska", 5, "400 г.");
